@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx5dfdpmjpd3j"]
+
+[ext_resource type="Script" path="res://Scripts/connection.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://i5ibwjri11q2" path="res://Assets/BG.png" id="2_r416a"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1")
+
+[node name="Body" type="Node2D" parent="."]
+texture_filter = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Body"]
+position = Vector2(200, 316)
+texture = ExtResource("2_r416a")
+
+[node name="LineEdit" type="LineEdit" parent="Body"]
+offset_left = 50.0
+offset_top = 270.0
+offset_right = 250.0
+offset_bottom = 301.0
+placeholder_text = "Server Pass"
+
+[node name="ServerUpdate" type="Button" parent="Body"]
+offset_left = 260.0
+offset_top = 270.0
+offset_right = 350.0
+offset_bottom = 301.0
+text = "Update"
+
+[node name="Port" type="LineEdit" parent="Body"]
+offset_left = 50.0
+offset_top = 310.0
+offset_right = 250.0
+offset_bottom = 341.0
+text = "31400"
+placeholder_text = "Port"
+
+[node name="PortUpdate" type="Button" parent="Body"]
+offset_left = 260.0
+offset_top = 310.0
+offset_right = 350.0
+offset_bottom = 341.0
+text = "Host"
+
+[node name="Pause" type="Button" parent="Body"]
+offset_left = 100.0
+offset_top = 352.0
+offset_right = 300.0
+offset_bottom = 383.0
+text = "Pause Server"
+
+[node name="deviceControl" type="CheckButton" parent="Body"]
+texture_filter = 1
+offset_left = 100.0
+offset_top = 394.0
+offset_right = 300.0
+offset_bottom = 425.0
+button_pressed = true
+text = "1 player per device"
+
+[node name="Timer0" type="Timer" parent="Body"]
+one_shot = true
+
+[node name="Timer1" type="Timer" parent="Body"]
+one_shot = true
+
+[node name="Sheref" type="Timer" parent="."]
+
+[connection signal="text_submitted" from="Body/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="Body/ServerUpdate" to="." method="_on_server_update_pressed"]
+[connection signal="text_submitted" from="Body/Port" to="." method="_on_port_text_submitted"]
+[connection signal="pressed" from="Body/PortUpdate" to="." method="_on_port_update_pressed"]
+[connection signal="pressed" from="Body/Pause" to="." method="_on_pause_pressed"]
+[connection signal="toggled" from="Body/deviceControl" to="." method="_on_check_button_toggled"]
+[connection signal="timeout" from="Body/Timer0" to="." method="_on_timer_0_timeout"]
+[connection signal="timeout" from="Body/Timer1" to="." method="_on_timer_1_timeout"]
+[connection signal="timeout" from="Sheref" to="." method="_on_sheref_timeout"]
