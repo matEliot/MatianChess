@@ -1,0 +1,189 @@
+[gd_scene load_steps=6 format=3 uid="uid://c26uo3qsuk52o"]
+
+[ext_resource type="Texture2D" uid="uid://bb4806jpsi4ih" path="res://assets/BG.png" id="1"]
+[ext_resource type="Script" path="res://scripts/connection.gd" id="1_fj8bd"]
+[ext_resource type="Texture2D" uid="uid://b5m5i2ebxexdn" path="res://assets/Assets.png" id="2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egj5u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlga8"]
+size = Vector2(268, 544)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_fj8bd")
+
+[node name="Board" type="Node2D" parent="."]
+process_mode = 4
+
+[node name="boardSp" type="Sprite2D" parent="Board"]
+position = Vector2(200, 316)
+texture = ExtResource("1")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Board"]
+auto_translate_mode = 1
+
+[node name="Clock" type="Area2D" parent="Board"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Clock"]
+position = Vector2(55, 316)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_egj5u")
+
+[node name="Clock" type="Sprite2D" parent="Board/Clock"]
+position = Vector2(55, 316)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(0, 64, 64, 64)
+
+[node name="boardArea" type="Area2D" parent="Board"]
+
+[node name="boardHitbox" type="CollisionShape2D" parent="Board/boardArea"]
+position = Vector2(246, 316)
+shape = SubResource("RectangleShape2D_mlga8")
+
+[node name="Queen1" type="Sprite2D" parent="Board"]
+position = Vector2(348, 556)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="Queen2" type="Sprite2D" parent="Board"]
+position = Vector2(280, 556)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="Queen3" type="Sprite2D" parent="Board"]
+position = Vector2(348, 488)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="Queen4" type="Sprite2D" parent="Board"]
+position = Vector2(144, 76)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="Queen5" type="Sprite2D" parent="Board"]
+position = Vector2(212, 76)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="Queen6" type="Sprite2D" parent="Board"]
+position = Vector2(144, 144)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="Drone1" type="Sprite2D" parent="Board"]
+position = Vector2(212, 556)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="Drone2" type="Sprite2D" parent="Board"]
+position = Vector2(280, 488)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="Drone3" type="Sprite2D" parent="Board"]
+position = Vector2(348, 420)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="Drone4" type="Sprite2D" parent="Board"]
+position = Vector2(280, 76)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="Drone5" type="Sprite2D" parent="Board"]
+position = Vector2(212, 144)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="Drone6" type="Sprite2D" parent="Board"]
+position = Vector2(144, 212)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="Pawn1" type="Sprite2D" parent="Board"]
+position = Vector2(212, 488)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(128, 0, 64, 64)
+
+[node name="Pawn2" type="Sprite2D" parent="Board"]
+position = Vector2(212, 420)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(128, 0, 64, 64)
+
+[node name="Pawn3" type="Sprite2D" parent="Board"]
+position = Vector2(280, 420)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(128, 0, 64, 64)
+
+[node name="Pawn4" type="Sprite2D" parent="Board"]
+position = Vector2(212, 212)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(128, 0, 64, 64)
+
+[node name="Pawn5" type="Sprite2D" parent="Board"]
+position = Vector2(280, 144)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(128, 0, 64, 64)
+
+[node name="Pawn6" type="Sprite2D" parent="Board"]
+position = Vector2(280, 212)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(128, 0, 64, 64)
+
+[node name="Score1" type="Label" parent="Board"]
+offset_right = 10.0
+offset_bottom = 23.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score2" type="Label" parent="Board"]
+offset_right = 10.0
+offset_bottom = 23.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="Body"]
+position = Vector2(800, 1264)
+scale = Vector2(4, 4)
+texture = ExtResource("1")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Body"]
+auto_translate_mode = 1
+
+[node name="LineEdit" type="LineEdit" parent="Body"]
+offset_left = 100.0
+offset_top = 300.0
+offset_right = 300.0
+offset_bottom = 331.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="Body"]
+autostart = true
+
+[connection signal="input_event" from="Board/Clock" to="." method="_on_clock_input_event"]
+[connection signal="input_event" from="Board/boardArea" to="." method="_on_board_area_input_event"]
+[connection signal="text_submitted" from="Body/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="timeout" from="Body/Timer" to="." method="_on_timer_timeout"]
